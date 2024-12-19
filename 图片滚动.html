@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>图片轮播图</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  .carousel {
+    width: 50%; /* 轮播图的宽度，可以根据需要调整 */
+    overflow: hidden; /* 隐藏溢出的内容 */
+    position:relative; /* 相对定位 */
+  }
+
+  .carousel-container {
+    display: flex; /* 使用flex布局 */
+    width: calc(100% * 图片数量); /* 根据图片数量调整宽度 */
+    transition: transform 0.5s ease; /* 平滑过渡效果 */
+  }
+
+  .carousel-item {
+    min-width: 100%; /* 每张图片的最小宽度，可以根据需要调整 */
+    transition: opacity 0.5s ease; /* 平滑过渡效果 */
+  }
+
+  .carousel-item img {
+    width: 100%; /* 图片宽度 */
+    display: block; /* 避免图片下方出现空白间隙 */
+  }
+
+  /* 箭头按钮样式 */
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 20px;
+  }
+
+  .carousel-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  #prevArrow {
+    left: 10px;
+  }
+
+  #nextArrow {
+    right: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="carousel">
+  <div class="carousel-container" id="carouselContainer">
+    <!-- 图片项 -->
+    <div class="carousel-item"><img src="壁纸6.jpg" alt="Image 1"></div>
+    <div class="carousel-item"><img src="壁纸7.jpg" alt="Image 2"></div>
+    <div class="carousel-item"><img src="壁纸9.jpg" alt="Image 3"></div>
+    <!-- 根据需要添加更多图片 -->
+  </div>
+  <div class="carousel-arrow" id="prevArrow" onclick="moveSlide(-1)">&#10094;</div>
+  <div class="carousel-arrow" id="nextArrow" onclick="moveSlide(1)">&#10095;</div>
+</div>
+
+<script>
+  let index = 0; // 当前显示的图片索引
+  const slides = document.querySelectorAll('.carousel-item');
+  const totalSlides = slides.length; // 图片总数
+  const carouselContainer = document.getElementById('carouselContainer');
+
+  function moveSlide(step) {
+    index = (index + step + totalSlides) % totalSlides; // 计算新的索引
+    carouselContainer.style.transform = `translateX(-${index * 100}%)`; // 移动轮播图
+  }
+
+  // 自动播放轮播图
+  setInterval(() => {
+    moveSlide(1);
+  }, 5000); // 每5秒自动播放下一张图片
+</script>
+
+</body>
+</html>

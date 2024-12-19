@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>访客统计</title>
+<script>
+// 模拟的访客计数器
+let visitorCount = 0;
+
+// 每次页面加载时增加访客计数
+window.onload = function() {
+    visitorCount++;
+    document.getElementById("visitorCount").innerText = "访客数: " + visitorCount;
+};
+</script>
+</head>
+<body>
+<h1>欢迎访问我们的网站</h1>
+<p id="visitorCount">访客数: 0</p>
+</body>
+</html>

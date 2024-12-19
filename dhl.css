@@ -1,0 +1,255 @@
+
+.container{
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+}
+.image-container{
+  max-width: 100%;
+  height:auto;
+}
+
+
+/*导航栏*/
+ul {
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ffffff;
+    background-color: #1389ff;
+}
+
+li {
+    float:none;
+}
+
+li a {  
+    display: block;
+    font-family: KaiTi;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 30px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #0062ff;
+}
+.navbar {
+    display: grid; /* 使用Grid布局 */
+    grid-template-columns: repeat(7, auto); /* 设置6列 */
+    justify-content: center; /* 水平居中对齐 */
+    list-style-type: none; /* 移除默认的列表样式 */
+    padding: 0; /* 移除内边距 */
+    margin: 0; /* 移除外边距 */
+    width: 100%;
+}
+.active {
+    background-color: #001eff;
+}
+
+/*滚动图片*/
+
+    * {
+        box-sizing: border-box;
+      }
+    
+      .carousel {
+        width: 50%; /* 轮播图的宽度，可以根据需要调整 */
+        overflow: hidden; /* 隐藏溢出的内容 */
+        position:relative; /* 相对定位 */
+        margin-left: auto;
+        margin-right: auto;
+      }
+    
+      .carousel-container {
+        display: flex; /* 使用flex布局 */
+        width: calc(100% * 图片数量); /* 根据图片数量调整宽度 */
+        transition: transform 0.5s ease; /* 平滑过渡效果 */
+      }
+    
+      .carousel-item {
+        min-width: 100%; /* 每张图片的最小宽度，可以根据需要调整 */
+        transition: opacity 0.5s ease; /* 平滑过渡效果 */
+      }
+    
+      .carousel-item img {
+        width: 100%; /* 图片宽度 */
+        display: block; /* 避免图片下方出现空白间隙 */
+      }
+    
+      /* 箭头按钮样式 */
+      .carousel-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 10px;
+        border-radius: 50%;
+        font-size: 20px;
+      }
+    
+      .carousel-arrow:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+    
+      #prevArrow {
+        left: 10px;
+      }
+    
+      #nextArrow {
+        right: 10px;
+      }
+      /*照片*/
+      .container {
+        position: relative;
+      }
+      .image-container {
+        position: absolute;
+        left: 400px; /* 可以根据需要调整图片的left值来改变位置 */
+        top: 100%; /* 可以根据需要调整top值来改变位置 */
+        transform: translateY(-50%); /* 垂直居中 */
+      }
+      .title {
+        position: relative;
+        left: 650px; /* 可以根据需要调整left值来改变标题的位置 */
+      }
+      .subtitle {
+        position: relative;
+        left: 20px; /* 可以根据需要调整left值来改变副标题的位置 */
+        font-size: 60%;
+        color: gray;
+      }
+      .introduce{
+        position: relative;
+        left:0px;
+      }
+
+p{
+  word-wrap: break-word; /* 在长单词或URL内部断行 */
+  white-space: normal;
+}
+
+/* 响应式导航栏 */
+@media (max-width: 768px) {
+  .navbar {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+  li a {
+    padding: 10px;
+  }
+}
+
+/*教师介绍*/
+.teacher-introduction {
+      display: flex; /* 使用 Flexbox 布局 */
+      align-items:center; /* 垂直居中对齐 */
+      background-color: #fff; /* 内容区域背景色 */
+      padding: 20px; /* 内边距 */
+      border-radius: 5px; /* 圆角 */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+      margin: 0 auto; /* 水平居中 */
+      max-width: 800px; /* 设置最大宽度 */
+      width: 100%; /* 宽度自适应 */
+  }
+.teacher-image {
+     flex: 0 0 170px; /* 固定宽度 170px */
+      height: auto; /* 高度自动 */
+}
+.teacher-image img {
+  width: 100%;
+  height: auto;
+}
+.teacher-info h2{
+  font-size: 30px;
+  margin: 0;
+  text-align: center;
+}
+.teacher-info p{
+  font-size: 17px;
+  margin: 5px 0 0;
+  color: #555;
+  text-align:left;
+  padding-left: 10px;
+  text-indent: 2em;
+  line-height: 2;
+}
+/*段落*/
+main {
+  padding: 20px;
+  position: relative;
+}
+
+footer {
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 10px;
+}
+main h2{
+  color: #005aff;
+  margin-bottom: 10px;
+  text-align: left;
+  border-bottom: 2px solid #8cb4ff; /* 段落下划线 */
+}
+main p{
+  line-height: 1.6;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: left
+}
+
+/*底部*/
+footer {
+      background-color: #f1f1f1; /* 设置背景颜色 */
+      padding: 20px; /* 内边距 */
+      text-align: center; /* 文字居中对齐 */
+      width: 100%; /* 宽度自适应 */
+      font-size: 13px;
+}
+.footer-content {
+      display: flex; /* 使用 Flexbox 布局 */
+      justify-content: center; /* 内容居中 */
+      align-items: center; /* 垂直居中 */
+  }
+  
+  .footer-content p {
+      margin: 0; /* 去掉默认外边距 */
+      padding: 0; /* 去掉默认内边距 */
+      padding-left: 20px; /* 设置左侧内边距 */
+  }
+
+
+/*访客人数*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+.visitor-count {
+  position:fixed;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out;
+}
+
+.visitor-count:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .visitor-count {
+    font-size: 14px;
+  }
+}
